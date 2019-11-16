@@ -1,14 +1,21 @@
 {
     "name": "grozwalker/hexlet-lvl1",
     "description": "First homework",
+    "license": "MIT",
     "authors": [
         {
             "name": "Andrey Groza",
             "email": "andrey.groza@mail.ru"
         }
     ],
-    "require": {},
-    "bin": [
-	    "bin/brain-games"
-	  ]
+    "bin": ["bin/brain-games"],
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.11"
+    },
+
+    "autoload": {
+        "files": [
+            "src/cli.php"
+        ]
+    }
 }
