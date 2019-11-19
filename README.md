@@ -1,6 +1,6 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/ea00ee18e77b84995502/maintainability)](https://codeclimate.com/github/grozwalker/php-project-lvl1/maintainability)
+[![Build Status](https://travis-ci.org/Hexlet/hexlet-sicp.svg?branch=master)](https://travis-ci.org/Hexlet/hexlet-sicp)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/ea00ee18e77b84995502/test_coverage)](https://codeclimate.com/github/grozwalker/php-project-lvl1/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ea00ee18e77b84995502/maintainability)](https://codeclimate.com/github/grozwalker/php-project-lvl1/maintainability)
 
 # Hexlet project #1
 
