@@ -1,5 +1,4 @@
 language: php
-install:
-  - composer install
+install: make setup
 script:
   make lint
