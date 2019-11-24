@@ -18,7 +18,8 @@
 
     "autoload": {
         "files": [
-            "src/cli.php"
+            "src/cli.php",
+            "src/app.php"
         ]
     },
     "require-dev": {
