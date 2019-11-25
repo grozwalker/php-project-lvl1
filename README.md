@@ -10,3 +10,5 @@
 2. `make install`
 
 [![asciicast](https://asciinema.org/a/lnWQfjn7ib7KCbPgGfBMTGUeG.svg)](https://asciinema.org/a/lnWQfjn7ib7KCbPgGfBMTGUeG)
+
+[![asciicast](https://asciinema.org/a/zq26srKujHsu2p8JK4DyhLGjm.svg)](https://asciinema.org/a/zq26srKujHsu2p8JK4DyhLGjm)
