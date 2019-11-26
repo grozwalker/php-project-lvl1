@@ -9,6 +9,20 @@
 1. clone repository
 2. `make install`
 
-[![asciicast](https://asciinema.org/a/lnWQfjn7ib7KCbPgGfBMTGUeG.svg)](https://asciinema.org/a/lnWQfjn7ib7KCbPgGfBMTGUeG)
+####Brain-games
+[![asciicast](https://asciinema.org/a/281693.svg)](https://asciinema.org/a/281693)
 
-[![asciicast](https://asciinema.org/a/zq26srKujHsu2p8JK4DyhLGjm.svg)](https://asciinema.org/a/zq26srKujHsu2p8JK4DyhLGjm)
+####Even
+[![asciicast](https://asciinema.org/a/tNLbv7cCu1MouKUEGVXMxty8m.svg)](https://asciinema.org/a/tNLbv7cCu1MouKUEGVXMxty8m)
+
+####Calc
+[![asciicast](https://asciinema.org/a/yCQWLo2r9muBprla17e1n2UlU.svg)](https://asciinema.org/a/yCQWLo2r9muBprla17e1n2UlU)
+
+####Gcd
+[![asciicast](https://asciinema.org/a/iS5Sbhwl70hlhkIIIjWPhVIEf.svg)](https://asciinema.org/a/iS5Sbhwl70hlhkIIIjWPhVIEf)
+
+####Progression
+[![asciicast](https://asciinema.org/a/Lv3lPXO2QnQH1wBxwUWTILMiq.svg)](https://asciinema.org/a/Lv3lPXO2QnQH1wBxwUWTILMiq)
+
+####Prime
+[![asciicast](https://asciinema.org/a/iAlI6kIyZOhpYHWWBkHUxK7r6.svg)](https://asciinema.org/a/iAlI6kIyZOhpYHWWBkHUxK7r6)
