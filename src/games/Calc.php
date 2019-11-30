@@ -8,10 +8,10 @@ function getConditionals()
 {
     $firstTerm = mt_rand(1, 99);
     $secondTerm = mt_rand(1, 99);
-    $availableOperations = ['-', '+', '*'];
-    $operationCount = count($availableOperations) - 1;
+    $operations = ['-', '+', '*'];
+    $operationsCount = count($operations) - 1;
 
-    $operation = $availableOperations[mt_rand(0, $operationCount)];
+    $operation = $operations[mt_rand(0, $operationsCount)];
 
     return [
         (string) $firstTerm . $operation . (string) $secondTerm,

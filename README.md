@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Hexlet/hexlet-sicp.svg?branch=master)](https://travis-ci.org/Hexlet/hexlet-sicp)
+[![Build Status](https://travis-ci.org/grozwalker/php-project-lvl1.svg?branch=master)](https://travis-ci.org/grozwalker/php-project-lvl1)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/ea00ee18e77b84995502/maintainability)](https://codeclimate.com/github/grozwalker/php-project-lvl1/maintainability)
 

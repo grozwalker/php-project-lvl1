@@ -11,7 +11,7 @@ function getConditionals()
 
 
     return [
-        (string) $firstTerm . ' ' . (string) $secondTerm,
+        "{$firstTerm} {$secondTerm}",
         [
             'firstTerm' => $firstTerm,
             'secondTerm' => $secondTerm,
