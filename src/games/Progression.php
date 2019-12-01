@@ -2,9 +2,20 @@
 
 namespace BrainGames\Games\Progression;
 
+use function BrainGames\Cli\run;
+
 const GAME_NAME = 'What number is missing in the progression?';
 
-function getConditionals()
+function startGame()
+{
+    $questionGenerator = function () {
+        return questionGenerator();
+    };
+
+    run(GAME_NAME, $questionGenerator);
+}
+
+function questionGenerator()
 {
     $startTerm = mt_rand(1, 99);
     $step = mt_rand(1, 9);
@@ -13,25 +24,14 @@ function getConditionals()
 
     $hiddenPosition = mt_rand(0, count($sequence) - 1);
 
+    $rightAnswer = $sequence[$hiddenPosition];
+
     $sequence[$hiddenPosition] = '..';
 
-    $answer = $sequence[$hiddenPosition];
-
     return [
-        (string) implode(' ', $sequence),
-        [
-            'answer' => $answer,
-        ]
+        implode(' ', $sequence),
+        $rightAnswer,
     ];
-}
-
-function getAnswer(array $conditionals)
-{
-    [
-        'answer' => $answer,
-    ] = $conditionals;
-
-    return $answer;
 }
 
 function getSequence($startTerm, $step)

@@ -2,33 +2,30 @@
 
 namespace BrainGames\Games\Gcd;
 
+use function BrainGames\Cli\run;
+
 const GAME_NAME = 'Find the greatest common divisor of given numbers.';
 
-function getConditionals()
+function startGame()
+{
+    $questionGenerator = function () {
+        return questionGenerator();
+    };
+
+    run(GAME_NAME, $questionGenerator);
+}
+
+function questionGenerator()
 {
     $firstTerm = mt_rand(1, 99);
     $secondTerm = mt_rand(1, 99);
 
+    $rightAnswer = getGcd($firstTerm, $secondTerm);
 
     return [
         "{$firstTerm} {$secondTerm}",
-        [
-            'firstTerm' => $firstTerm,
-            'secondTerm' => $secondTerm,
-        ]
+        $rightAnswer,
     ];
-}
-
-function getAnswer(array $conditionals)
-{
-    [
-        'firstTerm' => $firstTerm,
-        'secondTerm' => $secondTerm
-    ] = $conditionals;
-
-    $correctAnswer = getGcd($firstTerm, $secondTerm);
-
-    return $correctAnswer;
 }
 
 function getGcd($firstTerm, $secondTerm)

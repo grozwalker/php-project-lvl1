@@ -2,35 +2,38 @@
 
 namespace BrainGames\Games\Calc;
 
-const GAME_NAME = 'What is the result of the expression?';
+use function BrainGames\Cli\run;
 
-function getConditionals()
+const GAME_NAME = 'What is the result of the expression?';
+const OPERATIONS = ['-', '+', '*'];
+
+function startGame()
+{
+    $questionGenerator = function () {
+        return questionGenerator();
+    };
+
+    run(GAME_NAME, $questionGenerator);
+}
+
+function questionGenerator()
 {
     $firstTerm = mt_rand(1, 99);
     $secondTerm = mt_rand(1, 99);
-    $operations = ['-', '+', '*'];
-    $operationsCount = count($operations) - 1;
+    $operationsCount = count(OPERATIONS) - 1;
 
-    $operation = $operations[mt_rand(0, $operationsCount)];
+    $operation = OPERATIONS[mt_rand(0, $operationsCount)];
+
+    $rightAnswer = getAnswer($firstTerm, $operation, $secondTerm);
 
     return [
-        (string) $firstTerm . $operation . (string) $secondTerm,
-        [
-            'firstTerm' => $firstTerm,
-            'operation' => $operation,
-            'secondTerm' => $secondTerm,
-        ]
+        "{$firstTerm} {$operation} {$secondTerm}",
+        $rightAnswer
     ];
 }
 
-function getAnswer(array $conditionals)
+function getAnswer(int $firstTerm, string $operation, int $secondTerm): int
 {
-    [
-        'firstTerm' => $firstTerm,
-        'operation' => $operation,
-        'secondTerm' => $secondTerm
-    ] = $conditionals;
-
     switch ($operation) {
         case '+':
             $correctAnswer = $firstTerm + $secondTerm;

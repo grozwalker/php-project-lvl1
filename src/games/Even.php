@@ -2,27 +2,26 @@
 
 namespace BrainGames\Games\Even;
 
+use function BrainGames\Cli\run;
+
 const GAME_NAME = 'Answer "yes" if number even otherwise answer "no".';
 
-function getConditionals()
+function startGame()
+{
+    $questionGenerator = function () {
+        return questionGenerator();
+    };
+
+    run(GAME_NAME, $questionGenerator);
+}
+
+function questionGenerator(): array
 {
     $number = mt_rand(1, 99);
 
-    return [
-        $number,
-        [
-            'number' => $number,
-        ]
-    ];
-}
+    $rightAnswer = isEven($number) ? 'yes' : 'no';
 
-function getAnswer(array $conditionals)
-{
-    ['number' => $number] = $conditionals;
-
-    $correctAnswer = isEven($number) ? 'yes' : 'no';
-
-    return $correctAnswer;
+    return [$number, $rightAnswer];
 }
 
 function isEven(int $number): bool
