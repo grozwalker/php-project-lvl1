@@ -4,29 +4,30 @@ namespace BrainGames\Games\Progression;
 
 use function BrainGames\Cli\run;
 
-const GAME_NAME = 'What number is missing in the progression?';
+const GAME_DESCRIPTION = 'What number is missing in the progression?';
+const SEQUENCE_LENGTH = 10;
 
 function startGame()
 {
-    $questionGenerator = function () {
-        return questionGenerator();
+    $getQuestionWithAnswer = function () {
+        return getQuestionWithAnswer();
     };
 
-    run(GAME_NAME, $questionGenerator);
+    run(GAME_DESCRIPTION, $getQuestionWithAnswer);
 }
 
-function questionGenerator()
+function getQuestionWithAnswer()
 {
     $startTerm = mt_rand(1, 99);
     $step = mt_rand(1, 9);
 
-    $sequence = getSequence($startTerm, $step);
+    $sequence = getSequence($startTerm, $step, SEQUENCE_LENGTH);
 
-    $hiddenPosition = mt_rand(0, count($sequence) - 1);
+    $hiddenElementPosition = mt_rand(0, count($sequence) - 1);
 
-    $rightAnswer = $sequence[$hiddenPosition];
+    $rightAnswer = $sequence[$hiddenElementPosition];
 
-    $sequence[$hiddenPosition] = '..';
+    $sequence[$hiddenElementPosition] = '..';
 
     return [
         implode(' ', $sequence),
@@ -34,9 +35,8 @@ function questionGenerator()
     ];
 }
 
-function getSequence($startTerm, $step)
+function getSequence($startTerm, $step, $sequenceLength)
 {
-    $sequenceLength = 10;
     $sequence = [];
 
     for ($i = 0; $i < $sequenceLength; $i++) {

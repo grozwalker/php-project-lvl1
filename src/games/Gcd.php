@@ -4,18 +4,18 @@ namespace BrainGames\Games\Gcd;
 
 use function BrainGames\Cli\run;
 
-const GAME_NAME = 'Find the greatest common divisor of given numbers.';
+const GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
 function startGame()
 {
-    $questionGenerator = function () {
-        return questionGenerator();
+    $getQuestionWithAnswer = function () {
+        return getQuestionWithAnswer();
     };
 
-    run(GAME_NAME, $questionGenerator);
+    run(GAME_DESCRIPTION, $getQuestionWithAnswer);
 }
 
-function questionGenerator()
+function getQuestionWithAnswer()
 {
     $firstTerm = mt_rand(1, 99);
     $secondTerm = mt_rand(1, 99);

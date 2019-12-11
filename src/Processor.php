@@ -5,9 +5,9 @@ namespace BrainGames\Cli;
 use function cli\line;
 use function cli\prompt;
 
-const NUMBER_OF_QUESTIONS = 3;
+const QUESTIONS_COUNT = 3;
 
-function run(string $gameName, callable $questionGenerator)
+function run(string $gameName, callable $getQuestionWithAnswer)
 {
     line('Welcome to the Brain Game!');
     line($gameName);
@@ -15,12 +15,10 @@ function run(string $gameName, callable $questionGenerator)
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
 
-    $isCorrectAnswer = false;
+    for ($i = 0; $i < QUESTIONS_COUNT; $i++) {
+        [$question, $rightAnswer]  = $getQuestionWithAnswer();
 
-    for ($i = 0; $i < NUMBER_OF_QUESTIONS; $i++) {
-        [$question, $rightAnswer]  = $questionGenerator();
-
-        line('Question: ' . $question);
+        line("Question: {$question}");
 
         $userAnswer = prompt('Your answer');
 
@@ -29,14 +27,12 @@ function run(string $gameName, callable $questionGenerator)
         if ($isCorrectAnswer) {
             line('Correct!');
         } else {
-            line($userAnswer . ' is wrong answer ;(. Correct answer was ' . $rightAnswer);
-            break;
+            line("{$userAnswer} is wrong answer ;(. Correct answer was {$rightAnswer}");
+            line("Let's try again, %s!", $name);
+
+            return;
         }
     }
 
-    if ($isCorrectAnswer) {
-        line("Congratulations, %s!", $name);
-    } else {
-        line("Let's try again, %s!", $name);
-    }
+    line("Congratulations, %s!", $name);
 }

@@ -4,18 +4,18 @@ namespace BrainGames\Games\Even;
 
 use function BrainGames\Cli\run;
 
-const GAME_NAME = 'Answer "yes" if number even otherwise answer "no".';
+const GAME_DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
 
 function startGame()
 {
-    $questionGenerator = function () {
-        return questionGenerator();
+    $getQuestionWithAnswer = function () {
+        return getQuestionWithAnswer();
     };
 
-    run(GAME_NAME, $questionGenerator);
+    run(GAME_DESCRIPTION, $getQuestionWithAnswer);
 }
 
-function questionGenerator(): array
+function getQuestionWithAnswer(): array
 {
     $number = mt_rand(1, 99);
 

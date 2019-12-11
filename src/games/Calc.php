@@ -4,19 +4,19 @@ namespace BrainGames\Games\Calc;
 
 use function BrainGames\Cli\run;
 
-const GAME_NAME = 'What is the result of the expression?';
+const GAME_DESCRIPTION = 'What is the result of the expression?';
 const OPERATIONS = ['-', '+', '*'];
 
 function startGame()
 {
-    $questionGenerator = function () {
-        return questionGenerator();
+    $getQuestionWithAnswer = function () {
+        return getQuestionWithAnswer();
     };
 
-    run(GAME_NAME, $questionGenerator);
+    run(GAME_DESCRIPTION, $getQuestionWithAnswer);
 }
 
-function questionGenerator()
+function getQuestionWithAnswer()
 {
     $firstTerm = mt_rand(1, 99);
     $secondTerm = mt_rand(1, 99);
@@ -46,9 +46,6 @@ function getAnswer(int $firstTerm, string $operation, int $secondTerm): int
         case '*':
             $correctAnswer = $firstTerm * $secondTerm;
             break;
-
-        default:
-            $correctAnswer = $firstTerm + $secondTerm;
     }
 
     return $correctAnswer;

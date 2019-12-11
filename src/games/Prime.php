@@ -4,25 +4,25 @@ namespace BrainGames\Games\Prime;
 
 use function BrainGames\Cli\run;
 
-const GAME_NAME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function startGame()
 {
-    $questionGenerator = function () {
-        return questionGenerator();
+    $getQuestionWithAnswer = function () {
+        return getQuestionWithAnswer();
     };
 
-    run(GAME_NAME, $questionGenerator);
+    run(GAME_DESCRIPTION, $getQuestionWithAnswer);
 }
 
-function questionGenerator()
+function getQuestionWithAnswer()
 {
-    $number = mt_rand(1, 200);
+    $question = mt_rand(1, 200);
 
-    $rightAnswer = isPrime($number) ? 'yes' : 'no';
+    $rightAnswer = isPrime($question) ? 'yes' : 'no';
 
     return [
-        (string) $number,
+        (string) $question,
         $rightAnswer,
     ];
 }
