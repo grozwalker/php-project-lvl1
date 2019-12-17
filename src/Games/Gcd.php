@@ -30,15 +30,13 @@ function getQuestionWithAnswer()
 
 function getGcd($firstTerm, $secondTerm)
 {
-    while (true) {
-        if ($firstTerm === $secondTerm) {
-            return $secondTerm;
-        }
+    if ($firstTerm === $secondTerm) {
+        return $secondTerm;
+    }
 
-        if ($firstTerm > $secondTerm) {
-            $firstTerm -= $secondTerm;
-        } else {
-            $secondTerm -= $firstTerm;
-        }
+    if ($firstTerm > $secondTerm) {
+        return getGcd($firstTerm - $secondTerm, $secondTerm);
+    } else {
+        return getGcd($firstTerm, $secondTerm - $firstTerm);
     }
 }

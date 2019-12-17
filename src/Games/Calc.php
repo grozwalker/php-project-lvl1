@@ -20,14 +20,13 @@ function getQuestionWithAnswer()
 {
     $firstTerm = mt_rand(1, 99);
     $secondTerm = mt_rand(1, 99);
-    $operationsCount = count(OPERATIONS) - 1;
 
-    $operation = OPERATIONS[mt_rand(0, $operationsCount)];
+    $operation = OPERATIONS[array_rand(OPERATIONS)];
 
     $rightAnswer = getAnswer($firstTerm, $operation, $secondTerm);
 
     return [
-        "{$firstTerm} {$operation} {$secondTerm}",
+        "$firstTerm $operation $secondTerm",
         $rightAnswer
     ];
 }

@@ -22,7 +22,7 @@ function getQuestionWithAnswer()
     $rightAnswer = isPrime($question) ? 'yes' : 'no';
 
     return [
-        (string) $question,
+        $question,
         $rightAnswer,
     ];
 }
@@ -30,6 +30,10 @@ function getQuestionWithAnswer()
 function isPrime($number): bool
 {
     $MIN_DIVIDOR = 2;
+
+    if ($number < $MIN_DIVIDOR) {
+        return false;
+    }
 
     $maxDividor = $number / 2;
 

@@ -22,9 +22,7 @@ function run(string $gameName, callable $getQuestionWithAnswer)
 
         $userAnswer = prompt('Your answer');
 
-        $isCorrectAnswer = $userAnswer == $rightAnswer;
-
-        if ($isCorrectAnswer) {
+        if ($userAnswer == $rightAnswer) {
             line('Correct!');
         } else {
             line("{$userAnswer} is wrong answer ;(. Correct answer was {$rightAnswer}");

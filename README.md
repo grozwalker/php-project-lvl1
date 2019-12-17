@@ -4,25 +4,30 @@
 
 # Hexlet project #1
 
-### Install
+## How To Install
+```
+> composer global require grozwalker/hexlet-lvl1
+> make install
+```
 
-1. clone repository
-2. `make install`
-
-####Brain-games
-[![asciicast](https://asciinema.org/a/281693.svg)](https://asciinema.org/a/281693)
+## Games
 
 ####Even
+Answer "yes" if the number is even, otherwise answer "no".
 [![asciicast](https://asciinema.org/a/tNLbv7cCu1MouKUEGVXMxty8m.svg)](https://asciinema.org/a/tNLbv7cCu1MouKUEGVXMxty8m)
 
 ####Calc
+Find the result of the expression.
 [![asciicast](https://asciinema.org/a/yCQWLo2r9muBprla17e1n2UlU.svg)](https://asciinema.org/a/yCQWLo2r9muBprla17e1n2UlU)
 
 ####Gcd
+Find the greatest common divisor of given numbers.
 [![asciicast](https://asciinema.org/a/iS5Sbhwl70hlhkIIIjWPhVIEf.svg)](https://asciinema.org/a/iS5Sbhwl70hlhkIIIjWPhVIEf)
 
 ####Progression
+Find number that missing in the progression.
 [![asciicast](https://asciinema.org/a/Lv3lPXO2QnQH1wBxwUWTILMiq.svg)](https://asciinema.org/a/Lv3lPXO2QnQH1wBxwUWTILMiq)
 
 ####Prime
+Answer "yes" if given number is prime. Otherwise answer "no".
 [![asciicast](https://asciinema.org/a/iAlI6kIyZOhpYHWWBkHUxK7r6.svg)](https://asciinema.org/a/iAlI6kIyZOhpYHWWBkHUxK7r6)

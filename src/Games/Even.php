@@ -17,11 +17,11 @@ function startGame()
 
 function getQuestionWithAnswer(): array
 {
-    $number = mt_rand(1, 99);
+    $question = mt_rand(1, 99);
 
-    $rightAnswer = isEven($number) ? 'yes' : 'no';
+    $rightAnswer = isEven($question) ? 'yes' : 'no';
 
-    return [$number, $rightAnswer];
+    return [$question, $rightAnswer];
 }
 
 function isEven(int $number): bool
